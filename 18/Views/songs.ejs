@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Total Songs: <%= count %></h1>
+
+  <!-- Add Song Form -->
+  <form action="/add" method="POST">
+    <input type="text" name="songname" placeholder="Song Name" required>
+    <input type="text" name="film" placeholder="Film Name" required>
+    <input type="text" name="music_director" placeholder="Music Director" required>
+    <input type="text" name="singer" placeholder="Singer" required>
+    <button type="submit">Add Song</button>
+  </form>
+
+  <!-- Song Table -->
+  <table border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Song Name</th>
+        <th>Film</th>
+        <th>Music Director</th>
+        <th>Singer</th>
+        <th>Actor</th>
+        <th>Actress</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (songs && songs.length > 0) { %>
+        <% songs.forEach(song => { %>
+          <tr>
+            <td><%= song.songname %></td>
+            <td><%= song.film %></td>
+            <td><%= song.music_director %></td>
+            <td><%= song.singer %></td>
+            <td><%= song.actor || '-' %></td>
+            <td><%= song.actress || '-' %></td>
+            <td>
+              <a href="/delete/<%= encodeURIComponent(song.songname) %>">Delete</a> |
+              <a href="/update/<%= encodeURIComponent(song.songname) %>">Update</a>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="7">No songs found.</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>

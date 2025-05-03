@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <!-- jQuery Mobile CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!-- jQuery Mobile JS -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home / Index Page -->
+<div data-role="page" id="home">
+  <div data-role="header" class="portfolio-header">
+    <h1>My Portfolio</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#about" data-icon="user">About</a></li>
+        <li><a href="#projects" data-icon="grid">Projects</a></li>
+        <li><a href="#skills" data-icon="star">Skills</a></li>
+        <li><a href="#contact" data-icon="mail">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content" class="home-content">
+    <h2>Welcome!</h2>
+    <p>Hi, I'm [Your Name], a developer passionate about building web and mobile applications.</p>
+  </div>
+  <div data-role="footer" class="portfolio-footer">
+    <h4>&copy; 2025 [Your Name]</h4>
+  </div>
+</div>
+
+<!-- About Me Page -->
+<div data-role="page" id="about">
+  <div data-role="header" class="portfolio-header">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>About Me</h1>
+  </div>
+  <div data-role="content">
+    <p>[Brief bio about yourself—education, interests, career goals.]</p>
+  </div>
+</div>
+
+<!-- Projects Page -->
+<div data-role="page" id="projects">
+  <div data-role="header" class="portfolio-header">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Projects</h1>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li>
+        <h2>Project One</h2>
+        <p>Short description of project one with technologies used.</p>
+      </li>
+      <li>
+        <h2>Project Two</h2>
+        <p>Short description of project two with technologies used.</p>
+      </li>
+      <li>
+        <h2>Project Three</h2>
+        <p>Short description of project three with technologies used.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Skills Page -->
+<div data-role="page" id="skills">
+  <div data-role="header" class="portfolio-header">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Skills</h1>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li>JavaScript / ES6+</li>
+      <li>HTML5 &amp; CSS3</li>
+      <li>React / Redux</li>
+      <li>Node.js / Express</li>
+      <li>MongoDB / SQL</li>
+      <li>Git &amp; GitHub</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Info Page -->
+<div data-role="page" id="contact">
+  <div data-role="header" class="portfolio-header">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Contact</h1>
+  </div>
+  <div data-role="content">
+    <p><strong>Email:</strong> you@example.com</p>
+    <p><strong>Phone:</strong> +1-234-567-8901</p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+  </div>
+</div>
+
+</body>
+</html>
+

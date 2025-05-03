@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Bookstore API</h1>
+
+    <!-- Add Book Form -->
+    <div class="form-container">
+        <h2>Add New Book</h2>
+        <input type="text" id="title" placeholder="Title" />
+        <input type="text" id="author" placeholder="Author" />
+        <input type="number" id="price" placeholder="Price" />
+        <input type="text" id="genre" placeholder="Genre" />
+        <button onclick="addBook()">Add Book</button>
+    </div>
+
+    <!-- Update Book Form -->
+    <div class="form-container" style="display:none;" id="updateFormContainer">
+        <h2>Update Book</h2>
+        <input type="text" id="updateTitle" placeholder="Title" />
+        <input type="text" id="updateAuthor" placeholder="Author" />
+        <input type="number" id="updatePrice" placeholder="Price" />
+        <input type="text" id="updateGenre" placeholder="Genre" />
+        <button onclick="updateBook()">Update Book</button>
+    </div>
+
+    <!-- Books List -->
+    <h2>Books List</h2>
+    <table id="bookList">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="bookTableBody">
+            <!-- Books will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Hidden input to store book ID for update -->
+    <input type="hidden" id="updateId" />
+
+    <script>
+        const apiUrl = '/books';
+
+        // Fetch books and populate the table
+        function fetchBooks() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('bookTableBody');
+                    tableBody.innerHTML = ''; // Clear current table rows
+
+                    data.forEach(book => {
+                        const row = document.createElement('tr');
+                        row.id = book._id;
+                        row.innerHTML = `
+                            <td>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>${book.price}</td>
+                            <td>${book.genre}</td>
+                            <td>
+                                <button onclick="populateUpdateForm('${book._id}')">Update</button>
+                                <button onclick="deleteBook('${book._id}')">Delete</button>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(err => alert('Error fetching books: ' + err));
+        }
+
+        // Add a new book
+        function addBook() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const price = document.getElementById('price').value;
+            const genre = document.getElementById('genre').value;
+
+            const newBook = { title, author, price, genre };
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newBook)
+            })
+            .then(response => response.json())
+            .then(() => {
+                alert('Book added successfully!');
+                fetchBooks(); // Refresh the book list
+            })
+            .catch(err => alert('Error adding book: ' + err));
+        }
+
+        // Delete a book
+        function deleteBook(id) {
+            fetch(`${apiUrl}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(() => {
+                alert('Book deleted successfully!');
+                fetchBooks(); // Refresh the book list
+            })
+            .catch(err => alert('Error deleting book: ' + err));
+        }
+
+        // Populate the update form with book data
+        function populateUpdateForm(id) {
+            const row = document.getElementById(id);
+            const title = row.children[0].innerText;
+            const author = row.children[1].innerText;
+            const price = row.children[2].innerText;
+            const genre = row.children[3].innerText;
+
+            document.getElementById('updateTitle').value = title;
+            document.getElementById('updateAuthor').value = author;
+            document.getElementById('updatePrice').value = price;
+            document.getElementById('updateGenre').value = genre;
+            document.getElementById('updateId').value = id;  // Store the book ID for update
+
+            // Show the update form and hide the add form
+            document.getElementById('updateFormContainer').style.display = 'block';
+            document.querySelector('.form-container').style.display = 'none';
+        }
+
+        // Update book details
+        function updateBook() {
+            const id = document.getElementById('updateId').value;  // Get the ID of the book to be updated
+            const title = document.getElementById('updateTitle').value;
+            const author = document.getElementById('updateAuthor').value;
+            const price = document.getElementById('updatePrice').value;
+            const genre = document.getElementById('updateGenre').value;
+
+            const updatedBook = { title, author, price, genre };
+
+            fetch(`/books/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedBook)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Book updated successfully!');
+                fetchBooks(); // Refresh the book list
+                resetForm();
+            })
+            .catch(err => alert('Error updating book: ' + err));
+        }
+
+        // Reset the form and show the add form again
+        function resetForm() {
+            document.getElementById('updateFormContainer').style.display = 'none';
+            document.querySelector('.form-container').style.display = 'block';
+            document.getElementById('updateId').value = '';  // Reset hidden input
+        }
+
+        // Initial fetch to display books
+        fetchBooks();
+    </script>
+</body>
+</html>

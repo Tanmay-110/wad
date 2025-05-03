@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Listing - ShopEasy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card { transition: 0.3s ease; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">ShopEasy</a>
+    </div>
+  </nav>
+
+  <!-- Filter + Content -->
+  <div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Our Products</h2>
+
+      <!-- Filter Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Filter by Category
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item filter-item" data-category="all" href="#">All</a></li>
+          <li><a class="dropdown-item filter-item" data-category="electronics" href="#">Electronics</a></li>
+          <li><a class="dropdown-item filter-item" data-category="clothing" href="#">Clothing</a></li>
+          <li><a class="dropdown-item filter-item" data-category="accessories" href="#">Accessories</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4" id="product-list">
+      <!-- Product: Electronics -->
+      <div class="col-sm-6 col-md-4 col-lg-3 product-card" data-category="electronics">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200?text=Smartphone" class="card-img-top" alt="Smartphone">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Smartphone X</h5>
+            <p class="card-text">Latest Android phone with AMOLED display.</p>
+            <p class="fw-bold text-primary">₹25,000</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product: Clothing -->
+      <div class="col-sm-6 col-md-4 col-lg-3 product-card" data-category="clothing">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200?text=Jeans" class="card-img-top" alt="Jeans">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Denim Jeans</h5>
+            <p class="card-text">Stylish and comfortable blue jeans.</p>
+            <p class="fw-bold text-primary">₹1,499</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product: Accessories -->
+      <div class="col-sm-6 col-md-4 col-lg-3 product-card" data-category="accessories">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200?text=Watch" class="card-img-top" alt="Watch">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Analog Watch</h5>
+            <p class="card-text">Classic watch with leather strap.</p>
+            <p class="fw-bold text-primary">₹2,999</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product: Electronics -->
+      <div class="col-sm-6 col-md-4 col-lg-3 product-card" data-category="electronics">
+        <div class="card h-100">
+          <img src="https://via.placeholder.com/300x200?text=Headphones" class="card-img-top" alt="Headphones">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Wireless Headphones</h5>
+            <p class="card-text">High-fidelity sound with noise cancellation.</p>
+            <p class="fw-bold text-primary">₹3,499</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS + Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Filter Script -->
+  <script>
+    const filterLinks = document.querySelectorAll('.filter-item');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const category = link.dataset.category;
+
+        productCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

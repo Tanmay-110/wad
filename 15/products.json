@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 2499,
+      "image": "images/product1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch",
+      "price": 3999,
+      "image": "images/product2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bluetooth Speaker",
+      "price": 1799,
+      "image": "images/product3.jpg"
+    }
+  ]
+  

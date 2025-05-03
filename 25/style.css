@@ -1,0 +1,32 @@
+/* File: css/style.css */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f9f9f9;
+  }
+  
+  .portfolio-header, .portfolio-footer {
+    background-color: #333 !important;
+    color: #fff !important;
+  }
+  
+  .portfolio-header h1 {
+    font-size: 1.4em;
+  }
+  
+  .home-content h2 {
+    margin-top: 0;
+  }
+  
+  .ui-navbar ul li a.ui-btn {
+    font-size: 0.9em;
+  }
+  
+  .data-role-content p, .data-role-content li {
+    line-height: 1.5;
+  }
+  
+  .portfolio-footer h4 {
+    margin: 0;
+    font-size: 0.8em;
+  }
+  

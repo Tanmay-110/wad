@@ -1,0 +1,41 @@
+/* File: css/style.css */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f2f2f2;
+  }
+  
+  .app-header, .app-footer {
+    background-color: #222 !important;
+    color: #fff !important;
+    text-align: center;
+  }
+  
+  .app-header h1 {
+    font-size: 1.5em;
+  }
+  
+  .reviews-set .ui-collapsible-heading {
+    background-color: #444 !important;
+    color: #fff !important;
+  }
+  
+  .reviews-set .poster {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .reviews-set p {
+    margin: 8px 0;
+    line-height: 1.4;
+  }
+  
+  .reviews-set p strong {
+    color: #000;
+  }
+  
+  .app-footer h4 {
+    margin: 0;
+    font-size: 0.9em;
+  }

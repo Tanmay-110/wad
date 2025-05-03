@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Employee Directory</h1>
+  <div id="employee-list" class="grid">Loading employees...</div>
+
+  <script>
+    fetch('/api/employees')
+      .then(res => res.json())
+      .then(employees => {
+        const container = document.getElementById('employee-list');
+        container.innerHTML = '';
+
+        employees.forEach(emp => {
+          const card = document.createElement('div');
+          card.className = 'employee-card';
+          card.innerHTML = `
+            <img src="${emp.image}" alt="${emp.name}">
+            <h3>${emp.name}</h3>
+            <p><strong>${emp.designation}</strong></p>
+            <p>Department: ${emp.department}</p>
+            <p>Salary: ₹${emp.salary.toLocaleString()}</p>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('employee-list').textContent = 'Failed to load employee data.';
+      });
+  </script>
+
+</body>
+</html>
