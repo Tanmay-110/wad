@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PICT B.E. Course Structure</title>
-  <!-- jQuery Mobile CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <!-- jQuery Mobile JS -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+    .subject-title {
+      font-weight: bold;
+      
+    }
+  </style>
 </head>
+
 <body>
 
 <div data-role="page" id="home">
-  <div data-role="header" class="app-header">
+
+  <div data-role="header" data-position="fixed">
     <h1>PICT B.E. Course Structure</h1>
   </div>
 
   <div data-role="content">
-    <div data-role="collapsibleset" class="course-sections" >
+    <div data-role="collapsible-set" data-theme="b" data-content-theme="d">
 
-      <!-- FE -->
+      <!-- First Year (FE) -->
       <div data-role="collapsible">
         <h3>First Year (FE)</h3>
-        <ul>
-          <li><strong>Engineering Mathematics I & II</strong>: Foundation in calculus, linear algebra, and differential equations.</li>
-          <li><strong>Applied Physics</strong>: Mechanics, optics, and modern physics concepts.</li>
-          <li><strong>Applied Chemistry</strong>: Chemical principles relevant to engineering materials.</li>
-          <li><strong>Basic Electrical Engineering</strong>: Circuits, DC/AC analysis, and electrical machines.</li>
-          <li><strong>Engineering Mechanics</strong>: Statics and dynamics of particles and rigid bodies.</li>
-          <li><strong>Workshop Practice</strong>: Hands-on skills in carpentry, welding, and machining.</li>
-          <li><strong>Environmental Studies</strong>: Basics of environmental science and sustainability.</li>
-        </ul>
+        <p class="subject-title">Engineering Mathematics-I</p>
+        <p>Fundamentals of calculus and linear algebra.</p>
+
+        <p class="subject-title">Engineering Physics</p>
+        <p>Concepts of mechanics, optics, and waves.</p>
+
+        <p class="subject-title">Engineering Graphics</p>
+        <p>Technical drawing and orthographic projections.</p>
       </div>
 
-      <!-- SE -->
+      <!-- Second Year (SE) -->
       <div data-role="collapsible">
         <h3>Second Year (SE)</h3>
-        <ul>
-          <li><strong>Data Structures & Algorithms</strong>: Lists, trees, graphs, and algorithmic analysis.</li>
-          <li><strong>Discrete Mathematics</strong>: Logic, set theory, and combinatorics.</li>
-          <li><strong>Digital Electronics</strong>: Logic gates, combinational and sequential circuits.</li>
-          <li><strong>Object Oriented Programming</strong>: Classes, inheritance, and polymorphism using C++/Java.</li>
-          <li><strong>Computer Organization</strong>: CPU architecture, memory, and I/O systems.</li>
-          <li><strong>Operating Systems Basics</strong>: Processes, threads, and scheduling.</li>
-        </ul>
+        <p class="subject-title">Data Structures</p>
+        <p>Introduction to arrays, linked lists, trees, and graphs.</p>
+
+        <p class="subject-title">Object-Oriented Programming</p>
+        <p>Concepts of OOP using C++ or Java.</p>
+
+        <p class="subject-title">Digital Electronics</p>
+        <p>Logic gates, flip-flops, and circuit design basics.</p>
       </div>
 
-      <!-- TE -->
+      <!-- Third Year (TE) -->
       <div data-role="collapsible">
         <h3>Third Year (TE)</h3>
-        <ul>
-          <li><strong>Database Management Systems</strong>: ER models, SQL, and normalization.</li>
-          <li><strong>Computer Networks</strong>: OSI model, TCP/IP, and network protocols.</li>
-          <li><strong>Software Engineering</strong>: SDLC, requirement analysis, and design patterns.</li>
-          <li><strong>Microprocessors</strong>: Architecture and interfacing of 8086/ARM processors.</li>
-          <li><strong>Theory of Computation</strong>: Automata, decidability, and complexity classes.</li>
-          <li><strong>Web Technologies</strong>: HTML, CSS, JavaScript, and client-server models.</li>
-        </ul>
+        <p class="subject-title">Database Management Systems</p>
+        <p>Relational databases, SQL, and transactions.</p>
+
+        <p class="subject-title">Computer Networks</p>
+        <p>Network models, protocols, and security.</p>
+
+        <p class="subject-title">Software Engineering</p>
+        <p>Development lifecycle, design models, and testing.</p>
       </div>
 
-      <!-- BE -->
+      <!-- Final Year (BE) -->
       <div data-role="collapsible">
-        <h3>Fourth Year (BE)</h3>
-        <ul>
-          <li><strong>Machine Learning</strong>: Supervised and unsupervised learning algorithms.</li>
-          <li><strong>Cloud Computing</strong>: Virtualization, AWS/Azure fundamentals.</li>
-          <li><strong>Mobile App Development</strong>: Android/iOS principles and frameworks.</li>
-          <li><strong>Internet of Things</strong>: Sensors, connectivity, and IoT architectures.</li>
-          <li><strong>Capstone Project</strong>: End-to-end engineering project under faculty guidance.</li>
-          <li><strong>Electives</strong>: Choose from cybersecurity, data analytics, AI, etc.</li>
-        </ul>
+        <h3>Final Year (BE)</h3>
+        <p class="subject-title">Machine Learning</p>
+        <p>Algorithms and models for predictive analytics.</p>
+
+        <p class="subject-title">Cloud Computing</p>
+        <p>Cloud architecture, services, and deployment.</p>
+
+        <p class="subject-title">Project Work</p>
+        <p>Capstone project integrating technical and soft skills.</p>
       </div>
-      
+
     </div>
   </div>
 
-  <div data-role="footer" class="app-footer">
-    <h4>&copy; 2025 PICT</h4>
+  <div data-role="footer" data-position="fixed">
+    <h4>PICT Pune</h4>
   </div>
+
 </div>
 
 </body>
 </html>
-
-
-

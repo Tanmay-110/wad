@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Manager</title>
+        <style>
+           
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #f4f6f8;
+            }
+    
+            h2 {
+                color: #333;
+            }
+    
+            form {
+                background-color: #fff;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+    
+            input[type="text"],
+            input[type="number"],
+            input[type="date"],
+            input[name],
+            button {
+                padding: 8px;
+                font-size: 14px;
+            }
+    
+            input {
+                flex: 1 1 180px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+    
+            button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 8px 12px;
+                transition: background-color 0.3s ease;
+            }
+    
+            button:hover {
+                background-color: #0056b3;
+            }
+    
+            a {
+                align-self: center;
+                color: red;
+                text-decoration: none;
+                margin-left: 10px;
+            }
+    
+            hr {
+                border: none;
+                border-top: 1px solid #ccc;
+                margin: 10px 0;
+            }
+    
+            #employeeList {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <h2>Add Employee</h2>
+    <form action="/add" method="POST">
+        <input name="name" placeholder="Name" required>
+        <input name="department" placeholder="Department" required>
+        <input name="designation" placeholder="Designation" required>
+        <input name="salary" type="number" placeholder="Salary" required>
+        <input name="joiningDate" type="date" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>All Employees</h2>
+    <div id="employeeList"></div>
+
+    <script>
+        async function loadEmployees() {
+            const res = await fetch('/employees');
+            const employees = await res.json();
+            const list = document.getElementById('employeeList');
+            list.innerHTML = '';
+            employees.forEach(emp => {
+                list.innerHTML += `
+                    <form action="/update/${emp._id}" method="POST">
+                        <input name="name" value="${emp.name}" required>
+                        <input name="department" value="${emp.department}" required>
+                        <input name="designation" value="${emp.designation}" required>
+                        <input name="salary" type="number" value="${emp.salary}" required>
+                        <input name="joiningDate" type="date" value="${emp.joiningDate.split('T')[0]}" required>
+                        <button type="submit">Update</button>
+                        <a href="/delete/${emp._id}">Delete</a>
+                    </form>
+                    <hr>
+                `;
+            });
+        }
+        loadEmployees();
+    </script>
+</body>
+</html>

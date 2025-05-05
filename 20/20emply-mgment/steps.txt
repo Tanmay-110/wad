@@ -1,0 +1,50 @@
+1. Add New Employee (POST)
+URL: http://localhost:5000/api/employees
+
+Method: POST
+
+Body → raw → JSON:
+
+json
+Copy
+Edit
+{
+  "name": "John Doe",
+  "department": "IT",
+  "designation": "Software Engineer",
+  "salary": 70000,
+  "joiningDate": "2023-05-01"
+}
+2. View All Employees (GET)
+URL: http://localhost:5000/api/employees
+
+Method: GET
+
+📌 Expected Output: List of all employee objects.
+
+3. Update Employee (PUT)
+First, get an employee’s _id from the GET request.
+
+URL: http://localhost:5000/api/employees/<EMPLOYEE_ID>
+
+Method: PUT
+
+Body → raw → JSON:
+
+json
+Copy
+Edit
+{
+  "salary": 80000
+}
+4. Delete Employee (DELETE)
+URL: http://localhost:5000/api/employees/<EMPLOYEE_ID>
+
+Method: DELETE
+
+📌 Expected Output:
+
+json
+Copy
+Edit
+{ "message": "Employee deleted" }
