@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  input {
+    padding: 8px;
+    width: 60%;
+  }
+  
+  button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  ul {
+    margin-top: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .edit-btn, .delete-btn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  

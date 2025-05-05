@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #ffdede;
+    background-color: #ffffff;
   }
   
   h1 {
@@ -28,9 +28,7 @@ body {
     transition: transform 0.2s;
   }
   
-  .employee-card:hover {
-    transform: scale(1.05);
-  }
+  
   
   .employee-card img {
     width: 100%;

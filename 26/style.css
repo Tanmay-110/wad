@@ -1,0 +1,75 @@
+/* css/style.css */
+
+/* Page background */
+body {
+    background-color: #e9ecef;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Header & Footer */
+  .app-header, .app-footer {
+    background-color: #2c3e50 !important;
+    color: #ecf0f1 !important;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .app-header h1, .app-footer h4 {
+    margin: 0.5em 0;
+  }
+  
+  /* Collapsible set container */
+  .course-sections {
+    margin: 1em 0;
+    border: none !important;
+  }
+  
+  /* Collapsible headers */
+  .course-sections .ui-collapsible-heading-toggle {
+    background-color: #546b82 !important;
+    color: #ecf0f1 !important;
+    font-weight: bold;
+    padding: 0.8em 1em !important;
+    border-bottom: 1px solid #2c3e50 !important;
+  }
+  
+  /* Collapsible content panels */
+  .course-sections .ui-collapsible-content {
+    background-color: #ffffff !important;
+    color: #8797a8 !important;
+    padding: 1em !important;
+  }
+  
+  /* Lists inside collapsibles */
+  .course-sections ul {
+    list-style: disc inside;
+    margin: 0.5em 0;
+    padding-left: 1em;
+  }
+  .course-sections ul li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+  }
+  
+  /* Strong tags */
+  .course-sections ul li strong {
+    color: #2c3e50;
+  }
+  
+  /* Links (if any) */
+  a {
+    color: #2980b9;
+  }
+  a:hover {
+    color: #1c5980;
+  }
+  
+  /* Responsive tweaks */
+  @media screen and (max-width: 480px) {
+    .app-header h1 {
+      font-size: 1.2em;
+    }
+    .course-sections .ui-collapsible-heading-toggle {
+      font-size: 0.95em;
+    }
+  }
+  

@@ -1,41 +1,80 @@
-/* File: css/style.css */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #f2f2f2;
+.movie-container {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for movie poster */
+.movie-poster {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Styling for the text container */
+.movie-details {
+  padding: 15px;
+}
+
+/* Movie Title Styling */
+.movie-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Movie Genre Styling */
+.movie-genre {
+  font-size: 1.2em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* Movie Summary Styling */
+.movie-summary {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Movie Review Styling */
+.movie-review {
+  font-size: 1em;
+  color: #333;
+  background-color: #f8f8f8;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+.footer-text {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+/* Ensuring good spacing and responsiveness on mobile */
+@media (max-width: 600px) {
+  .movie-poster {
+      max-width: 100%;
   }
-  
-  .app-header, .app-footer {
-    background-color: #222 !important;
-    color: #fff !important;
-    text-align: center;
+
+  .movie-title {
+      font-size: 1.3em;
   }
-  
-  .app-header h1 {
-    font-size: 1.5em;
+
+  .movie-genre, .movie-summary {
+      font-size: 1em;
   }
-  
-  .reviews-set .ui-collapsible-heading {
-    background-color: #444 !important;
-    color: #fff !important;
+
+  .movie-review {
+      font-size: 0.9em;
   }
-  
-  .reviews-set .poster {
-    width: 100%;
-    height: auto;
-    margin: 10px 0;
-    border-radius: 4px;
-  }
-  
-  .reviews-set p {
-    margin: 8px 0;
-    line-height: 1.4;
-  }
-  
-  .reviews-set p strong {
-    color: #000;
-  }
-  
-  .app-footer h4 {
-    margin: 0;
-    font-size: 0.9em;
-  }
+}

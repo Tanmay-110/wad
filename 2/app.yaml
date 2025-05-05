@@ -1,0 +1,14 @@
+runtime: python39  # Required, even if you're not using Python code
+
+handlers:
+  - url: /styles\.css
+    static_files: styles.css
+    upload: styles\.css
+
+  - url: /
+    static_files: index.html
+    upload: index.html
+
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)

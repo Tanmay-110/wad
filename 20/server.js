@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const Employee = require('./model/Employee');
+const Employee = require('./models/Employee');
 
 const app = express();
 app.use(express.json());
