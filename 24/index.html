@@ -4,81 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Reviews</title>
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- jQuery Mobile JS -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    <div data-role="page" id="movieReviews">
-        <!-- Page Header -->
-        <div data-role="header" data-theme="b">
-            <h1>Movie Reviews</h1>
-        </div>
-
-        <!-- Page Content -->
-        <div data-role="content">
-            <!-- Movie 1 -->
-            <div class="movie-container">
-                <img src="https://via.placeholder.com/300x400" alt="Movie Poster 1" class="movie-poster" />
-                <div class="movie-details">
-                    <div class="movie-title">Movie Title 1</div>
-                    <div class="movie-genre"><strong>Genre:</strong> Action, Thriller</div>
-                    <div class="movie-summary"><strong>Summary:</strong> A thrilling action-packed adventure where the protagonist must outsmart an enemy.</div>
-                    <div class="movie-review"><strong>Review:</strong> "A high-octane movie with mind-blowing action sequences. The plot is gripping, but the character development feels a bit shallow." - Movie Critic</div>
+    <div data-role="page" id = "home">
+        <div data-role="header" class="heading"><h2>Movie Reviews</h2></div>
+        <div data-role="content" class="content">
+            <div data-role="collapsibleset">
+                <div data-role="collapsible">
+                    <h3>Movie 1</h3>
+                    <ul>
+                        <li><strong>Director:</strong> Director Name</li>
+                        <li><strong>Cast:</strong> Actor 1, Actor 2, Actor 3</li>
+                        <li><strong>Genre:</strong> Action, Drama</li>
+                        <li><strong>Release Date:</strong> January 1, 2025</li>
+                    </ul>
+                    
                 </div>
-            </div>
-
-            <!-- Movie 2 -->
-            <div class="movie-container">
-                <img src="https://via.placeholder.com/300x400" alt="Movie Poster 2" class="movie-poster" />
-                <div class="movie-details">
-                    <div class="movie-title">Movie Title 2</div>
-                    <div class="movie-genre"><strong>Genre:</strong> Drama, Romance</div>
-                    <div class="movie-summary"><strong>Summary:</strong> A heartwarming love story set in a beautiful town.</div>
-                    <div class="movie-review"><strong>Review:</strong> "A touching and emotional story. The chemistry between the leads is undeniable, though the pacing feels slow at times." - Movie Critic</div>
+                <div data-role="collapsible">
+                    <h3>Movie 2</h3>
+                    <ul>
+                        <li><strong>Director:</strong> Director Name</li>
+                        <li><strong>Cast:</strong> Actor 1, Actor 2, Actor 3</li>
+                        <li><strong>Genre:</strong> Action, Drama</li>
+                        <li><strong>Release Date:</strong> January 1, 2025</li>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Movie 3 -->
-            <div class="movie-container">
-                <img src="https://via.placeholder.com/300x400" alt="Movie Poster 3" class="movie-poster" />
-                <div class="movie-details">
-                    <div class="movie-title">Movie Title 3</div>
-                    <div class="movie-genre"><strong>Genre:</strong> Horror</div>
-                    <div class="movie-summary"><strong>Summary:</strong> A spine-chilling tale that will keep you on the edge of your seat.</div>
-                    <div class="movie-review"><strong>Review:</strong> "An atmospheric horror film that uses tension and suspense masterfully. The jump scares are effective, but the story feels predictable." - Movie Critic</div>
+                <div data-role="collapsible">
+                    <h3>Movie 3</h3>
+                    <ul>
+                        <li><strong>Director:</strong> Director Name</li>
+                        <li><strong>Cast:</strong> Actor 1, Actor 2, Actor 3</li>
+                        <li><strong>Genre:</strong> Action, Drama</li>
+                        <li><strong>Release Date:</strong> January 1, 2025</li>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Movie 4 -->
-            <div class="movie-container">
-                <img src="https://via.placeholder.com/300x400" alt="Movie Poster 4" class="movie-poster" />
-                <div class="movie-details">
-                    <div class="movie-title">Movie Title 4</div>
-                    <div class="movie-genre"><strong>Genre:</strong> Comedy</div>
-                    <div class="movie-summary"><strong>Summary:</strong> A lighthearted comedy that delivers plenty of laughs.</div>
-                    <div class="movie-review"><strong>Review:</strong> "A fun and entertaining ride from start to finish. The jokes are clever, and the characters are lovable, but the storyline lacks depth." - Movie Critic</div>
-                </div>
-            </div>
-
-            <!-- Movie 5 -->
-            <div class="movie-container">
-                <img src="https://via.placeholder.com/300x400" alt="Movie Poster 5" class="movie-poster" />
-                <div class="movie-details">
-                    <div class="movie-title">Movie Title 5</div>
-                    <div class="movie-genre"><strong>Genre:</strong> Sci-Fi, Adventure</div>
-                    <div class="movie-summary"><strong>Summary:</strong> A futuristic sci-fi epic that explores the boundaries of space and time.</div>
-                    <div class="movie-review"><strong>Review:</strong> "A visually stunning film with impressive special effects, but the narrative is a bit convoluted. Still, a must-watch for sci-fi fans." - Movie Critic</div>
+                <div data-role="collapsible">
+                    <h3>Movie 4</h3>
+                    <ul>
+                        <li><strong>Director:</strong> Director Name</li>
+                        <li><strong>Cast:</strong> Actor 1, Actor 2, Actor 3</li>
+                        <li><strong>Genre:</strong> Action, Drama</li>
+                        <li><strong>Release Date:</strong> January 1, 2025</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <div data-role="footer" data-theme="b" class="footer-text">
-            <h4>Movie Review App</h4>
-        </div>
+        <div data-role="footer" class="footer"><h5>&copy;2025 Movies</h5></div>
     </div>
 </body>
 </html>
